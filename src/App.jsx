@@ -1,8 +1,10 @@
+import RouteNavigation from "./auth/RouteNavigation.jsx";
+
 function App() {
 
     return (
         <>
-            <h1>Hallo Dunia</h1>
+            <RouteNavigation/>
         </>
     )
 }

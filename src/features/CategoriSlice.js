@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { axiosInstance } from "../auth/AxiosConfig.jsx";
 
-let reqOptionalGetALl = {
+let reqOptionsGetALl = {
     url: "/api/categories",
     method: "GET",
 };
@@ -10,7 +10,7 @@ export const getAllCategories = createAsyncThunk(
     "categories/getAllCategories",
     async () => {
         try {
-            const response = await axiosInstance(reqOptionalGetALl);
+            const response = await axiosInstance(reqOptionsGetALl);
             return response.data.result;
         } catch (error) {
             const data = JSON.parse(error.request.response);
