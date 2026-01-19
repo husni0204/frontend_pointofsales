@@ -5,14 +5,14 @@ import { toast } from "react-toastify";
 import { Button, Card, Col, Form, Row } from "react-bootstrap";
 
 const Login = () => {
-    const [username, setUsername] = useState("");
+    const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             const response = await axiosInstance.post("/api/users/login", {
-                username,
+                userName,
                 password,
             });
             if (response.data){
@@ -41,7 +41,7 @@ const Login = () => {
                     <Card.Title className="text-center mb-5">
                         <h4>Login</h4>
                     </Card.Title>
-                    <Form onSuspend={handleSubmit}>
+                    <Form onSubmit={handleSubmit}>
                         <Form.Group as={Row} className="mb-3">
                             <Form.Label column lg="3" sm="12">
                                 Username
@@ -49,8 +49,8 @@ const Login = () => {
                             <Col lg="9" sm="12">
                                 <Form.Control
                                     type="text"
-                                    value={username}
-                                    onChange={e => setUsername(e.target.value)}
+                                    value={userName}
+                                    onChange={e => setUserName(e.target.value)}
                                 />
                             </Col>
                         </Form.Group>

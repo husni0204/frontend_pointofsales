@@ -3,6 +3,7 @@ import secureLocalStorage from "react-secure-storage";
 import Home from "../components/Home.jsx";
 import Login from "../components/Login.jsx";
 import { ToastContainer } from "react-toastify";
+import Logout from "../components/Logout.jsx";
 
 const RouteNavigation = () => {
     const refreshToken = secureLocalStorage.getItem("refreshToken");
@@ -13,6 +14,7 @@ const RouteNavigation = () => {
                     <BrowserRouter>
                         <Routes>
                             <Route path="/" element={<Home />} />
+                            <Route path="/logout" element={<Logout />} />
                         </Routes>
                     </BrowserRouter>
                 </>
